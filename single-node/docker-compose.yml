@@ -78,7 +78,7 @@ services:
     environment:
       - INDEXER_USERNAME=admin
       - INDEXER_PASSWORD=SecretPassword
-      - WAZUH_API_URL=https://khulnasoft.manager
+      - KHULNASOFT_API_URL=https://khulnasoft.manager
       - DASHBOARD_USERNAME=kibanaserver
       - DASHBOARD_PASSWORD=kibanaserver
       - API_USERNAME=khulnasoft-kui

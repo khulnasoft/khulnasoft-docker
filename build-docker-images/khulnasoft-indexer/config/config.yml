@@ -1,0 +1,5 @@
+nodes:
+  # Khulnasoft indexer server nodes
+  indexer:
+    - name: demo.indexer
+      ip: demo.indexer

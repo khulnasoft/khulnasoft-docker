@@ -1,0 +1,24 @@
+nodes:
+  # Khulnasoft indexer server nodes
+  indexer:
+    - name: khulnasoft1.indexer
+      ip: khulnasoft1.indexer
+    - name: khulnasoft2.indexer
+      ip: khulnasoft2.indexer
+    - name: khulnasoft3.indexer
+      ip: khulnasoft3.indexer
+
+  # Khulnasoft server nodes
+  # Use node_type only with more than one Khulnasoft manager
+  server:
+    - name: khulnasoft.master
+      ip: khulnasoft.master
+      node_type: master
+    - name: khulnasoft.worker
+      ip: khulnasoft.worker
+      node_type: worker
+
+  # Khulnasoft dashboard node
+  dashboard:
+    - name: khulnasoft.dashboard
+      ip: khulnasoft.dashboard
