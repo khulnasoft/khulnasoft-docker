@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  generator:
+    image: khulnasoft/khulnasoft-certs-generator:0.0.1
+    hostname: khulnasoft-certs-generator
+    volumes:
+      - ./config/khulnasoft_indexer_ssl_certs/:/certificates/
+      - ./config/certs.yml:/config/certs.yml
