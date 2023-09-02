@@ -1,0 +1,4 @@
+single-node/config/khulnasoft_indexer_ssl_certs/*.pem
+single-node/config/khulnasoft_indexer_ssl_certs/*.key
+multi-node/config/khulnasoft_indexer_ssl_certs/*.pem
+multi-node/config/khulnasoft_indexer_ssl_certs/*.key
