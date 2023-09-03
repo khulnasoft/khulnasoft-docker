@@ -52,7 +52,7 @@ jobs:
           echo "GITHUB_REF_NAME="${GITHUB_REF_NAME%/*} >> $GITHUB_ENV
 
       - name: Run Trivy vulnerability scanner for Khulnasoft indexer
-        uses: aquasecurity/trivy-action@2a2157eb22c08c9a1fac99263430307b8d1bc7a2
+        uses: aquasecurity/trivy-action@fbd16365eb88e12433951383f5e99bd901fc618f
         with:
           image-ref: 'khulnasoft/khulnasoft-indexer:${{env.KHULNASOFT_IMAGE_VERSION}}'
           format: 'template'
