@@ -1,0 +1,103 @@
+file:
+  /etc/filebeat/filebeat.yml:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/bin/khulnasoft-control:
+    exists: true
+    mode: "0750"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/etc/lists/audit-keys:
+    exists: true
+    mode: "0660"
+    owner: khulnasoft
+    group: khulnasoft
+    filetype: file
+    contains: []
+  /var/ossec/etc/ossec.conf:
+    exists: true
+    mode: "0660"
+    owner: root
+    group: khulnasoft
+    filetype: file
+    contains: []
+  /var/ossec/etc/rules/local_rules.xml:
+    exists: true
+    mode: "0660"
+    owner: khulnasoft
+    group: khulnasoft
+    filetype: file
+    contains: []
+  /var/ossec/etc/sslmanager.cert:
+    exists: true
+    mode: "0640"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/etc/sslmanager.key:
+    exists: true
+    mode: "0640"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+package:
+  filebeat:
+    installed: true
+    versions:
+    - 7.10.2
+  khulnasoft-manager:
+    installed: true
+    versions:
+    - 4.8.0-1
+port:
+  tcp:1514:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:1515:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:55000:
+    listening: true
+    ip:
+    - 0.0.0.0
+process:
+  filebeat:
+    running: true
+  khulnasoft-analysisd:
+    running: true
+  khulnasoft-authd:
+    running: true
+  khulnasoft-execd:
+    running: true
+  khulnasoft-monitord:
+    running: true
+  khulnasoft-remoted:
+    running: true
+  khulnasoft-syscheckd:
+    running: true
+  s6-supervise:
+    running: true
+  khulnasoft-db:
+    running: true
+  khulnasoft-modulesd:
+    running: true
+user:
+  khulnasoft:
+    exists: true
+    groups:
+    - khulnasoft
+    home: /var/ossec
+    shell: /sbin/nologin
+group:
+  khulnasoft:
+    exists: true
