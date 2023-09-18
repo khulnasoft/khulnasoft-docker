@@ -7,8 +7,8 @@
 ## Variables
 CERT_TOOL=khulnasoft-certs-tool.sh
 PASSWORD_TOOL=khulnasoft-passwords-tool.sh
-PACKAGES_URL=https://packages.khulnasoft.com/4.6/
-PACKAGES_DEV_URL=https://packages-dev.khulnasoft.com/4.6/
+PACKAGES_URL=https://packages.wazuh.com/4.6/
+PACKAGES_DEV_URL=https://packages-dev.wazuh.com/4.6/
 
 ## Check if the cert tool exists in S3 buckets
 CERT_TOOL_PACKAGES=$(curl --silent -I $PACKAGES_URL$CERT_TOOL | grep -E "^HTTP" | awk  '{print $2}')

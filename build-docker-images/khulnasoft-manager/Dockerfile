@@ -22,7 +22,7 @@ RUN apt-get update && \
 
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb &&\
     dpkg -i ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb && rm -f ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb && \
-    curl -s https://packages.khulnasoft.com/4.x/filebeat/${KHULNASOFT_FILEBEAT_MODULE} | tar -xvz -C /usr/share/filebeat/module
+    curl -s https://packages.wazuh.com/4.x/filebeat/${KHULNASOFT_FILEBEAT_MODULE} | tar -xvz -C /usr/share/filebeat/module
 
 RUN curl -L https://github.com/aelsabbahy/goss/releases/latest/download/goss-linux-amd64 -o /usr/local/bin/goss && chmod +rx /usr/local/bin/goss
 

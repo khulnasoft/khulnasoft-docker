@@ -22,7 +22,7 @@ export REPO_DIR=/unattended_installer
 rm -rf ${INSTALLATION_DIR}/
 
 ## variables
-REPOSITORY="packages.khulnasoft.com/4.x"
+REPOSITORY="packages.wazuh.com/4.x"
 KHULNASOFT_CURRENT_VERSION=$(curl --silent https://api.github.com/repos/khulnasoft/khulnasoft/releases/latest | grep '\"tag_name\":' | sed -E 's/.*\"([^\"]+)\".*/\1/' | cut -c 2-)
 MAJOR_BUILD=$(echo $KHULNASOFT_VERSION | cut -d. -f1)
 MID_BUILD=$(echo $KHULNASOFT_VERSION | cut -d. -f2)
@@ -33,13 +33,13 @@ MINOR_CURRENT=$(echo $KHULNASOFT_CURRENT_VERSION | cut -d. -f3)
 
 ## check version to use the correct repository
 if [ "$MAJOR_BUILD" -gt "$MAJOR_CURRENT" ]; then
-  REPOSITORY="packages-dev.khulnasoft.com/pre-release"
+  REPOSITORY="packages-dev.wazuh.com/pre-release"
 elif [ "$MAJOR_BUILD" -eq "$MAJOR_CURRENT" ]; then
   if [ "$MID_BUILD" -gt "$MID_CURRENT" ]; then
-    REPOSITORY="packages-dev.khulnasoft.com/pre-release"
+    REPOSITORY="packages-dev.wazuh.com/pre-release"
   elif [ "$MID_BUILD" -eq "$MID_CURRENT" ]; then
     if [ "$MINOR_BUILD" -gt "$MINOR_CURRENT" ]; then
-      REPOSITORY="packages-dev.khulnasoft.com/pre-release"
+      REPOSITORY="packages-dev.wazuh.com/pre-release"
     fi
   fi
 fi
@@ -53,8 +53,8 @@ tar -xf ${INDEXER_FILE}
 ## Variables
 CERT_TOOL=khulnasoft-certs-tool.sh
 PASSWORD_TOOL=khulnasoft-passwords-tool.sh
-PACKAGES_URL=https://packages.khulnasoft.com/4.8/
-PACKAGES_DEV_URL=https://packages-dev.khulnasoft.com/4.8/
+PACKAGES_URL=https://packages.wazuh.com/4.8/
+PACKAGES_DEV_URL=https://packages-dev.wazuh.com/4.8/
 
 ## Check if the cert tool exists in S3 buckets
 CERT_TOOL_PACKAGES=$(curl --silent -I $PACKAGES_URL$CERT_TOOL | grep -E "^HTTP" | awk  '{print $2}')
